@@ -401,6 +401,9 @@ defns typing_stmt :: '' ::=
 
  defn G |- bil is ok :: :: type_seq :: t_ by
 
+ ------------------------------ :: seq_empty
+ G |- {} is ok
+
  G |- stmt is ok
  ------------------------------ :: seq_one
  G |- {stmt} is ok
