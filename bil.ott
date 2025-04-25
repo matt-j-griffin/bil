@@ -819,21 +819,18 @@ defns reduce_stmt :: '' ::=
 
  defn delta , word |- seq ~> delta' , word' , seq' :: :: seq :: '' by
 
- delta,word |- s1 ~> delta',word'
- ------------------------------------------------------------- :: seq_rec
- delta,word |- {s1; s2; ..; sn} ~> delta', word', {s2; ..; sn}
-
- delta,word |- s1 ~> delta',word'
- ------------------------------------------------------------- :: seq_last
- delta,word |- {s1; s2} ~> delta', word', {s2}
+ delta1,word1 |- s1 ~> delta2,word2
+ delta2,word2 |- {s2; ..; sn} ~> delta3, word3
+------------------------------------------------------------- :: seq_rec
+ delta1,word1 |- {s1; s2; ..; sn} ~> delta3, word3
 
  delta,word |- s1 ~> delta',word'
  ------------------------------------------------------------- :: seq_one
- delta,word |- {s1} ~> delta', word', {}
+ delta,word |- {s1} ~> delta', word'
 
 
  ------------------------------------------------------------- :: seq_nil
- delta,word |- {} ~> delta, word, {}
+ delta,word |- {} ~> delta, word
  
 defns multistep_exp :: '' ::=
 
