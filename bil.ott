@@ -459,7 +459,7 @@ defns program :: '' ::=
  defn delta , w , var ~> delta' , w' , var' :: :: step :: '' by
 
  delta,w,var |-> {addr=w1; size=w2; code=bil}
- delta, w1.+w2 |- bil ~> delta',w3,{}
+ delta, w1.+w2 |- bil ~> delta',w3
  ---------------------------------------------------------- :: step
  delta,w,var  ~> delta',w3,var
 
